@@ -2,10 +2,12 @@
 interface Teacher {
     firstName: string; // can only be set during initialization
     lastName: string;  // can only be set during initialization
-    fullTimeEmployee: boolean;
+
+
     yearsOfExperience?: number; // optional property
     location: string;
-  
+    location: string;
+    fullTimeEmployee: boolean;
     // Index signature to allow any additional properties
     [key: string]: any;
   }
@@ -49,4 +51,18 @@ interface Teacher {
   // Log details of both teachers
   logTeacherDetails(teacher1);
   logTeacherDetails(teacher2);
+  
+  interface Directors extends Teacher {
+    numberOfReports: number;
+  }
+  
+  const director1: Directors = {
+    firstName: 'John',
+    lastName: 'Doe',
+    location: 'London',
+    fullTimeEmployee: true,
+    numberOfReports: 17,
+  };
+  
+  console.log(director1);
   
