@@ -6,7 +6,6 @@ interface Teacher {
 
     yearsOfExperience?: number; // optional property
     location: string;
-    location: string;
     fullTimeEmployee: boolean;
     // Index signature to allow any additional properties
     [key: string]: any;
@@ -65,4 +64,16 @@ interface Teacher {
   };
   
   console.log(director1);
+  // Define the interface for the printTeacher function
+interface printTeacherFunction {
+    (firstName: string, lastName: string): string;
+  }
+  
+  // Implement the printTeacher function
+  const printTeacher: printTeacherFunction = (firstName, lastName) => {
+    return `${firstName[0]}. ${lastName}`;
+  };
+  
+  // Example usage
+  console.log(printTeacher("John", "Doe")); // Output: J. Doe
   
