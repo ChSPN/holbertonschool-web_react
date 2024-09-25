@@ -51,7 +51,20 @@ function createEmployee(salary: number | string): Director | Teacher {
     }
 }
 
-// Exemple d'utilisation de la fonction createEmployee
-console.log(createEmployee(200)); // Teacher
-console.log(createEmployee(1000)); // Director
-console.log(createEmployee('$500')); // Director
+// Fonction isDirector
+function isDirector(employee: Director | Teacher): employee is Director {
+    return (employee as Director).workDirectorTasks !== undefined;
+}
+
+// Fonction executeWork
+function executeWork(employee: Director | Teacher): void {
+    if (isDirector(employee)) {
+        console.log(employee.workDirectorTasks());
+    } else {
+        console.log(employee.workTeacherTasks());
+    }
+}
+
+// Exemple d'utilisation des fonctions
+executeWork(createEmployee(200)); // Getting to work
+executeWork(createEmployee(1000)); // Getting to director tasks
