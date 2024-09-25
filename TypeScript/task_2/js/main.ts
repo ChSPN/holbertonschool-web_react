@@ -68,3 +68,19 @@ function executeWork(employee: Director | Teacher): void {
 // Exemple d'utilisation des fonctions
 executeWork(createEmployee(200)); // Getting to work
 executeWork(createEmployee(1000)); // Getting to director tasks
+
+// Type littéral pour Subjects
+type Subjects = 'Math' | 'History';
+
+// Fonction teachClass
+function teachClass(todayClass: Subjects): string {
+    if (todayClass === 'Math') {
+        return 'Teaching Math';
+    } else if (todayClass === 'History') {
+        return 'Teaching History';
+    }
+}
+
+// Exemple d'utilisation de la fonction teachClass
+console.log(teachClass('Math')); // Teaching Math
+console.log(teachClass('History')); // Teaching History
