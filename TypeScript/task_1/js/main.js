@@ -48,3 +48,22 @@ var printTeacher = function (firstName, lastName) {
 };
 // Example usage
 console.log(printTeacher("John", "Doe")); // Output: J. Doe
+// Implémentation de la classe StudentClass
+var StudentClass = /** @class */ (function () {
+    function StudentClass(_a) {
+        var firstName = _a.firstName, lastName = _a.lastName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    StudentClass.prototype.workOnHomework = function () {
+        return "Currently working";
+    };
+    StudentClass.prototype.displayName = function () {
+        return this.firstName;
+    };
+    return StudentClass;
+}());
+// Exemple d'utilisation de la classe StudentClass
+var student = new StudentClass({ firstName: "John", lastName: "Doe" });
+console.log(student.workOnHomework()); // Affiche "Currently working"
+console.log(student.displayName()); // Affiche "John"
